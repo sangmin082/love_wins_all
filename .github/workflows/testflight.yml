@@ -1,0 +1,51 @@
+name: TestFlight
+
+on:
+  workflow_dispatch: # Actions 탭에서 수동 실행
+  push:
+    branches: [main] # main에 푸시(머지)될 때마다 TestFlight에 새 빌드 업로드
+    paths: # 앱 관련 파일이 바뀔 때만 (서버/문서 변경은 빌드 불필요)
+      - "LoveWinsAll/**"
+      - "LoveWinsAll.xcodeproj/**"
+      - "fastlane/**"
+      - "Gemfile*"
+      - ".github/workflows/testflight.yml"
+
+jobs:
+  build-and-upload:
+    runs-on: macos-15
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: 최신 Xcode 선택
+        uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: "latest-stable"
+
+      - name: Ruby 설정
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.3"
+          bundler-cache: true
+
+      - name: 빌드 & TestFlight 업로드
+        run: bundle exec fastlane beta
+        env:
+          APP_STORE_CONNECT_KEY_ID: ${{ secrets.APP_STORE_CONNECT_KEY_ID }}
+          APP_STORE_CONNECT_ISSUER_ID: ${{ secrets.APP_STORE_CONNECT_ISSUER_ID }}
+          APP_STORE_CONNECT_KEY: ${{ secrets.APP_STORE_CONNECT_KEY }}
+          APPLE_TEAM_ID: ${{ secrets.APPLE_TEAM_ID }}
+          MATCH_GIT_URL: ${{ secrets.MATCH_GIT_URL }}
+          MATCH_GIT_BASIC_AUTHORIZATION: ${{ secrets.MATCH_GIT_BASIC_AUTHORIZATION }}
+          MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
+
+      - name: 빌드 산출물 보관 (실패 분석용)
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-logs
+          path: |
+            ~/Library/Logs/gym
+            *.ipa
+          if-no-files-found: ignore

@@ -1,0 +1,18 @@
+name: Server Keepalive
+
+on:
+  schedule:
+    - cron: "*/10 * * * *" # 10분마다 서버를 깨워 Render 무료 티어 슬립 방지
+  workflow_dispatch:
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - name: 서버 핑
+        run: |
+          curl -sS -m 90 -o /dev/null -w "HTTP %{http_code}, %{time_total}s\n" \
+            https://love-wins-all.onrender.com/ || true
+          curl -sS -m 30 -o /dev/null -w "app-ads.txt: HTTP %{http_code}\n" \
+            https://love-wins-all.onrender.com/app-ads.txt || true
