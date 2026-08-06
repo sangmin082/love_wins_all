@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<!-- 개발용: 로컬/사설망의 ws:// 서버 접속 허용. 배포 시 wss(TLS)로 바꾸고 제거할 것 -->
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
+	<!-- 표준 암호화(TLS)만 사용 — TestFlight 수출 규정 질문 생략 -->
+	<key>ITSAppUsesNonExemptEncryption</key>
+	<false/>
+	<!-- AdMob 앱 ID — ⚠️ 현재는 Google 공식 테스트 앱 ID. 출시 전 본인 AdMob 앱 ID로 교체할 것 -->
+	<key>GADApplicationIdentifier</key>
+	<string>ca-app-pub-3940256099942544~1458002511</string>
+	<!-- ATT(앱 추적 투명성) 권한 문구 -->
+	<key>NSUserTrackingUsageDescription</key>
+	<string>맞춤형 광고 제공을 위해 사용됩니다. 허용하지 않아도 게임은 동일하게 이용할 수 있습니다.</string>
+	<!-- Google 광고 SKAdNetwork 식별자 (주요 항목 — 전체 목록: developers.google.com/admob/ios/quick-start) -->
+	<key>SKAdNetworkItems</key>
+	<array>
+		<dict>
+			<key>SKAdNetworkIdentifier</key>
+			<string>cstr6suwn9.skadnetwork</string>
+		</dict>
+		<dict>
+			<key>SKAdNetworkIdentifier</key>
+			<string>4fzdc2evr5.skadnetwork</string>
+		</dict>
+		<dict>
+			<key>SKAdNetworkIdentifier</key>
+			<string>2fnua5tdw4.skadnetwork</string>
+		</dict>
+		<dict>
+			<key>SKAdNetworkIdentifier</key>
+			<string>ydx93a7ass.skadnetwork</string>
+		</dict>
+		<dict>
+			<key>SKAdNetworkIdentifier</key>
+			<string>5a6flpkh64.skadnetwork</string>
+		</dict>
+		<dict>
+			<key>SKAdNetworkIdentifier</key>
+			<string>p78axxw29g.skadnetwork</string>
+		</dict>
+		<dict>
+			<key>SKAdNetworkIdentifier</key>
+			<string>v72qych5uu.skadnetwork</string>
+		</dict>
+		<dict>
+			<key>SKAdNetworkIdentifier</key>
+			<string>c6k4g5qg8m.skadnetwork</string>
+		</dict>
+	</array>
+</dict>
+</plist>

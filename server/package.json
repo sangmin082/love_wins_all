@@ -1,0 +1,13 @@
+{
+  "name": "love-wins-all-server",
+  "version": "1.0.0",
+  "description": "러브 윈즈 올 2인용 온라인 대전 서버",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "node test.js"
+  },
+  "dependencies": {
+    "ws": "^8.18.0"
+  }
+}

@@ -1,0 +1,18 @@
+# Xcode
+xcuserdata/
+DerivedData/
+build/
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# fastlane
+fastlane/report.xml
+fastlane/README.md
+
+# Ruby
+vendor/bundle/
+.bundle/
+
+# macOS
+.DS_Store

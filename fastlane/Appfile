@@ -1,0 +1,2 @@
+app_identifier("com.lovewinsall.game")
+team_id(ENV["APPLE_TEAM_ID"])
