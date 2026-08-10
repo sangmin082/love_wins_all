@@ -87,6 +87,20 @@ CI에서 자동 생성해 별도 private repo에 보관하므로 Mac이 전혀 �
 필요한 GitHub Secrets와 상세 절차는 [docs/APP_STORE.md](docs/APP_STORE.md)를 참고하세요.
 (번들 ID: `com.lovewinsall.game`)
 
+### Secrets 재사용 (여러 앱을 만들 때)
+
+TestFlight Secrets 7개는 전부 **계정 공통 값**이라 앱마다 다시 입력할 필요가 없습니다. 두 가지 방법:
+
+- **스크립트 (개인 계정 그대로)** — 값을 로컬 파일에 한 번만 적어 두고, 새 저장소마다 한 줄로 등록:
+  ```bash
+  cp scripts/ios-secrets.env.example ~/.config/ios-secrets.env   # 최초 1회, 값 채우기
+  ./scripts/setup-secrets.sh sangmin082/새앱저장소                # 새 앱마다 이 한 줄
+  ```
+  (GitHub CLI 필요: `brew install gh && gh auth login`)
+- **Organization (아예 입력 제거)** — 무료 org를 만들어 앱 저장소들을 그 아래에 두면,
+  org Settings → Secrets and variables → Actions에 **한 번만** 등록해 두고 모든 저장소가 자동으로 공유합니다
+  (visibility: All repositories). 기존 저장소는 Settings → Transfer ownership으로 옮기면 되고, 옛 주소는 자동 리다이렉트됩니다.
+
 ## 수익화 (AdMob + 광고 제거 IAP)
 
 - **전면 광고** — 노출 지점은 "매치 종료 후 결과 화면에서 나갈 때" 한 곳뿐 (2판당 1회, 최소 3분 간격). 심리전 게임 특성상 게임 도중에는 절대 노출하지 않습니다.
