@@ -64,7 +64,7 @@ open LoveWinsAll.xcodeproj
 
 1. [render.com](https://render.com) 가입 (GitHub 로그인)
 2. New → **Blueprint** → 이 저장소 연결 → `render.yaml`이 자동 인식됨 → Deploy
-3. 배포 완료 후 주소 확인 (서비스 이름이 `love-wins-all`이면 `wss://love-wins-all.onrender.com`)
+3. 배포 완료 후 주소 확인 (서비스 이름이 `love-wins-all`이면 `wss://love-wins-all-opgx.onrender.com`)
 4. 주소가 다르면 `LoveWinsAll/Online/OnlineConfig.swift`의 기본 주소를 수정
 
 무료 티어는 15분간 접속이 없으면 잠들며, 다음 접속 시 깨어나는 데 최대 1분 걸립니다 (로비에 안내 문구 표시됨).
