@@ -13,6 +13,6 @@ jobs:
       - name: 서버 핑
         run: |
           curl -sS -m 90 -o /dev/null -w "HTTP %{http_code}, %{time_total}s\n" \
-            https://love-wins-all.onrender.com/ || true
+            https://love-wins-all-opgx.onrender.com/ || true
           curl -sS -m 30 -o /dev/null -w "app-ads.txt: HTTP %{http_code}\n" \
-            https://love-wins-all.onrender.com/app-ads.txt || true
+            https://love-wins-all-opgx.onrender.com/app-ads.txt || true

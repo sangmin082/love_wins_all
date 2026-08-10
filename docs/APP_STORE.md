@@ -12,7 +12,7 @@ App Store Connect → 나의 앱 → 러브윈즈올-LoveWinsAll 에서 아래 �
 | 부제 (30자) | 데스게임 가위바위보 베팅 심리전 |
 | 카테고리 | 게임 → 카드 (보조: 보드) |
 | 가격 | 무료 |
-| **개인정보 처리방침 URL** | `https://love-wins-all.onrender.com/privacy` |
+| **개인정보 처리방침 URL** | `https://love-wins-all-opgx.onrender.com/privacy` |
 | 번들 ID | `com.lovewinsall.game` |
 
 ## 2. 프로모션 텍스트 (170자)
