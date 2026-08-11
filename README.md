@@ -105,9 +105,8 @@ TestFlight Secrets 7개는 전부 **계정 공통 값**이라 앱마다 다시 �
 
 - **전면 광고** — 노출 지점은 "매치 종료 후 결과 화면에서 나갈 때" 한 곳뿐 (2판당 1회, 최소 3분 간격). 심리전 게임 특성상 게임 도중에는 절대 노출하지 않습니다.
 - **광고 제거** — 비소모성 IAP `com.lovewinsall.game.removeads`. 설정(⚙️)에서 구매/복원. StoreKit 2 영수증 검증.
-- 현재 광고 ID는 **Google 공식 테스트 ID**입니다. 출시 전 교체할 것:
-  1. `LoveWinsAll/Info.plist`의 `GADApplicationIdentifier` → 본인 AdMob 앱 ID (`ca-app-pub-XXXX~YYYY`)
-  2. `LoveWinsAll/Monetization/MonetizationConfig.swift`의 `interstitialAdUnitID` → 전면 광고 단위 ID
+- 광고 ID는 실제 AdMob ID가 설정되어 있습니다. 개발 중 테스트 광고가 필요하면
+  AdMob 콘솔에서 기기를 테스트 기기로 등록하거나 `MonetizationConfig.swift`의 주석에 있는 Google 테스트 ID로 잠시 교체하세요.
 - IAP 판매를 위해서는 App Store Connect에서 **유료 앱 계약(Paid Apps) + 은행/세금 등록**과 IAP 상품 등록이 선행되어야 합니다.
 
 ## 구현 노트 (규칙 해석)
