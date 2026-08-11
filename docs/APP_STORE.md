@@ -91,9 +91,8 @@ App Store Connect → 나의 앱 → 러브윈즈올-LoveWinsAll 에서 아래 �
 
 ## 9. 제출 전 체크리스트
 
-- [ ] AdMob에서 이 앱용 앱 ID·전면 광고 단위 생성 후 교체
-      (`Info.plist`의 `GADApplicationIdentifier`, `MonetizationConfig.interstitialAdUnitID` — 현재는 Google 테스트 ID)
-- [ ] Render에 서버 배포 후 주소 확인 (`OnlineConfig.defaultServerURLString`)
+- [x] AdMob 앱 ID·전면 광고 단위 교체 완료
+- [x] Render 서버 배포 완료 (`wss://love-wins-all-opgx.onrender.com`)
 - [ ] 스크린샷 3~5장 업로드 (6.9형)
 - [ ] 개인정보 처리방침 URL 입력
 - [ ] App Privacy 라벨 작성 (위 6번)
