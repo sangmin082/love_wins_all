@@ -9,7 +9,7 @@ App Store Connect → 나의 앱 → 러브윈즈올-LoveWinsAll 에서 아래 �
 | 항목 | 값 |
 |---|---|
 | 이름 | 러브 윈즈 올 |
-| 부제 (30자) | 데스게임 가위바위보 베팅 심리전 |
+| 부제 (30자) | 데스게임 가위바위보 심리전 |
 | 카테고리 | 게임 → 카드 (보조: 보드) |
 | 가격 | 무료 |
 | **개인정보 처리방침 URL** | `https://love-wins-all-opgx.onrender.com/privacy` |
@@ -29,7 +29,7 @@ App Store Connect → 나의 앱 → 러브윈즈올-LoveWinsAll 에서 아래 �
 > • 카드 — 가위 12장, 바위 7장, 보 7장, 러브 4장. 매 라운드 3장씩 받습니다.
 > • 족보 — 러브 윈즈 올 > 트리플 > 투 러브 > 믹스 > 더블 > 원 러브. 동순위는 가위바위보 상성으로!
 > • 선언 — 카드 1장을 오픈하고 족보를 선언합니다. 거짓말도 전략입니다.
-> • 베팅 — 선언 전후 두 번의 베팅. 체크, 레이즈, 올인, 폴드 — 통상적인 포커와 동일.
+> • 베팅 — 선언 전후 두 번의 칩 걸기. 체크, 레이즈, 올인, 폴드로 수싸움을 벌입니다.
 > • 승리 — 상대의 칩 25개를 전부 빼앗으면 승리!
 >
 > ◆ 특징
@@ -44,14 +44,16 @@ App Store Connect → 나의 앱 → 러브윈즈올-LoveWinsAll 에서 아래 �
 ## 4. 키워드 (100자 이내, 쉼표 구분)
 
 ```
-러브윈즈올,데스게임,가위바위보,베팅,블러핑,심리전,카드게임,포커,대전,온라인대결,두뇌게임,보드게임
+러브윈즈올,데스게임,가위바위보,블러핑,심리전,카드게임,전략,대전,온라인대결,두뇌게임,보드게임,1대1
 ```
 
 ## 5. 연령 등급 설문
 
-- 도박 관련: **"모의 도박 — 빈도: 드물게/경미"** 선택을 검토할 것.
-  실제 현금·게임 내 화폐 구매가 없는 칩 베팅이지만, 포커식 베팅 메커니즘이 있으므로
-  "모의 도박" 항목에 해당할 수 있습니다 (선택 시 12+ 예상). 나머지 항목은 "없음".
+- **모든 항목 "없음/아니오"** — 모의 도박도 "없음"으로 답한다.
+  ⚠️ "모의 도박"을 선택하면 개인 개발자 계정은 제출이 자동 반려된다 (조직 계정 필수 정책).
+  이 게임은 카지노 게임 시뮬레이션이 아니라 TV 예능의 심리전 게임이며, 칩은 매치 내
+  점수 역할일 뿐(구매·현금화·이월 불가) 도박 요소가 없으므로 "없음"이 정확한 응답이다.
+  심사 메모(7번)에 이 근거를 명시해 둔다.
 
 ## 6. App Privacy (개인정보 보호 라벨)
 
@@ -70,13 +72,12 @@ App Store Connect → 나의 앱 → 러브윈즈올-LoveWinsAll 에서 아래 �
 
 ## 7. 심사 정보 (App Review Information) — 메모란에 붙여넣기
 
-> This is a 1v1 card betting game based on a Korean TV game show format (rock-paper-scissors themed cards).
+> This app does NOT contain simulated gambling. It is a 1v1 strategy card game based on a Korean TV variety show, using rock-paper-scissors themed cards.
 >
+> • The in-game chips function purely as score points within a match. They cannot be purchased, cashed out, or transferred, and every match starts both players at equal chips. There is no casino-style content (no slots, dice, roulette, or gambling card games) and no real-money element of any kind. The age rating reflects this.
 > • All features can be fully tested in SINGLE PLAYER mode (혼자 하기) — no account or login required.
 > • The 2-player mode (둘이 하기) requires two devices: one creates a room and shares a 6-digit code, the other joins with the code. Single player is sufficient to review all mechanics.
-> • Betting uses in-game chips only. Chips cannot be purchased, cashed out, or transferred — there is no real-money gambling and no gambling-related IAP.
-> • Ads: a single interstitial placement after finishing a match, never during gameplay.
-> • The only IAP is a non-consumable "Remove Ads".
+> • Ads: a single interstitial placement after finishing a match, never during gameplay. No IAP is currently offered for sale.
 
 ## 8. 스크린샷 (사용자 작업)
 
