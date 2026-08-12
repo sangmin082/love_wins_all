@@ -27,13 +27,25 @@ final class AdsManager: NSObject {
     private var interstitial: InterstitialAd?
     #endif
 
-    /// 앱 시작 후 1회 — ATT 권한을 요청하고 광고 SDK를 초기화한다.
+    /// ATT 권한을 요청하고 광고 SDK를 초기화한다.
+    /// 앱이 active 상태가 될 때마다 호출해도 안전하다(멱등) — 권한이 미결정(.notDetermined)인
+    /// 동안에는 계속 재시도해서, 첫 요청 시점에 앱이 active가 아니어서 팝업이 조용히
+    /// 무시되는 경우(App Review Guideline 2.1 지적 사례)에도 반드시 팝업이 뜨게 한다.
     func startAfterTrackingPrompt() {
         guard !started, !adsRemoved else { return }
         #if canImport(AppTrackingTransparency)
-        ATTrackingManager.requestTrackingAuthorization { [weak self] _ in
-            // 허용/거부와 무관하게 SDK는 시작한다 (거부 시 비맞춤 광고)
-            Task { @MainActor in self?.startSDK() }
+        switch ATTrackingManager.trackingAuthorizationStatus {
+        case .notDetermined:
+            ATTrackingManager.requestTrackingAuthorization { [weak self] status in
+                Task { @MainActor in
+                    // 여전히 미결정이면(팝업이 못 뜬 경우) 다음 active 전환 때 재시도한다
+                    guard status != .notDetermined else { return }
+                    // 허용/거부와 무관하게 SDK는 시작한다 (거부 시 비맞춤 광고)
+                    self?.startSDK()
+                }
+            }
+        default:
+            startSDK()
         }
         #else
         startSDK()
