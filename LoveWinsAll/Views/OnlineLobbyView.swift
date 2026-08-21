@@ -38,7 +38,8 @@ struct OnlineLobbyView: View {
                                 } label: {
                                     Image(systemName: "doc.on.doc")
                                 }
-                                ShareLink(item: "러브 윈즈 올 대결 초대! 방 코드: \(code)") {
+                                // 앱이 없는 친구도 바로 설치할 수 있게 스토어 링크를 함께 보낸다
+                                ShareLink(item: "러브 윈즈 올 대결 초대! 방 코드: \(code)\n앱 설치: https://apps.apple.com/app/id6800019846") {
                                     Image(systemName: "square.and.arrow.up")
                                 }
                             }
